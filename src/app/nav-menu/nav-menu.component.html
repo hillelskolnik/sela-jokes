@@ -1,0 +1,57 @@
+<header>
+  <nav
+  class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3"
+>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">All Jokes</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target=".navbar-collapse"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="isExpanded"
+      (click)="toggle()"  >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse d-sm-inline-flex"
+      [ngClass]="{ show: isExpanded }"  >
+      <ul class="nav nav-pills">
+        <li
+          class="nav-item"
+          
+           >
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Jokes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/nerdy" routerLinkActive="active"
+            >Nerdy Jokes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/explicit" routerLinkActive="active"
+            >Explicit Jokes</a >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="row text-center">
+  <div class="col-4 offset-4">
+    <label for="sel1">Select list (select one):</label>
+    <select [(ngModel)]="selected" class="form-control" id="sel1" name="sellist1" (change)="selectOption()">5
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+</div>
+
+</header>
