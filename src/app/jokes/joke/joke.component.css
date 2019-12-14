@@ -1,0 +1,19 @@
+.mod0{
+    color:rgb(192, 1, 1);    
+    border: 1px solid rgb(192, 1, 1);
+    
+}
+.mod1{
+    color: darkgreen;    
+    border: 1px solid darkgreen;
+   
+}
+.mod2{
+    color: darkblue;    
+    border: 1px solid darkblue;
+    
+}
+p{
+    padding-left: 10px;
+    border-radius: 5px;
+}

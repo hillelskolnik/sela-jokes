@@ -19,7 +19,7 @@ interface Jokes{
 export class JokesService {
   activeJokes = new Subject<string[]>();
   isFetching = new Subject<boolean>();
-  error = new Subject<string>();
+  error = new Subject<boolean>();
   private count: number;
   private category: string = "";
 
@@ -37,12 +37,13 @@ export class JokesService {
 
   private getJokes(){
     this.isFetching.next(true);
-    var url = 'http://api.icndb.com/jokes/random/' + this.count;
+    var url = 'http://api.icndb.com/jokes/random/' + this.count
+    + '?escape=javascript';
     if (this.category !== '') {
-      url += '?limitTo=[' + this.category + ']';
+      url += '&limitTo=[' + this.category + ']';
     }
     this.http.get<Jokes>(url).subscribe(jokes => {
-      this.error.next('');
+      this.error.next(false);
       this.isFetching.next(false);
       var jokesArr: string[] = [];
       jokes.value.forEach(element => {
@@ -50,7 +51,8 @@ export class JokesService {
       });
       this.activeJokes.next(jokesArr);
     }, error => {
-      this.error.next('error');
+      console.log(error);
+      this.error.next(true);
       this.isFetching.next(false);
       this.activeJokes.next([]);
     });

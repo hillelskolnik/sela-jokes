@@ -9,6 +9,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AllComponent } from './all/all.component';
 import { ExplicitComponent } from './explicit/explicit.component';
 import { NerdyComponent } from './nerdy/nerdy.component';
+import { JokesComponent } from './jokes/jokes.component';
+import { JokeComponent } from './jokes/joke/joke.component';
+import { WrongRouteComponent } from './wrong-route/wrong-route.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { NerdyComponent } from './nerdy/nerdy.component';
     NavMenuComponent,
     AllComponent,
     ExplicitComponent,
-    NerdyComponent
+    NerdyComponent,
+    JokesComponent,
+    JokeComponent,
+    WrongRouteComponent
   ],
   imports: [
     BrowserModule,

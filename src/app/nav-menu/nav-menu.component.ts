@@ -8,6 +8,7 @@ import { JokesService } from '../jokes.service';
 })
 export class NavMenuComponent implements OnInit {
   selected: number = 5;
+  isExpanded: boolean = false;
   constructor(private jokesService: JokesService) { }
 
   ngOnInit() {
@@ -16,6 +17,9 @@ export class NavMenuComponent implements OnInit {
 
   selectOption(){
     this.jokesService.setCount(this.selected);
+  }
+  toggle(){
+    this.isExpanded = !this.isExpanded;
   }
 
 }
